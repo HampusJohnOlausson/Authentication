@@ -9,9 +9,10 @@ mongoose.connect('mongodb://localhost/node_auth', {
     console.log('connected to the database');
 })
 
-app.get('/', (req, res) => {
-    res.send('hello');
-})
+const routes = require('./routes/routes')
+
+app.use('/api', routes);
+
 
 app.listen(8000);
 
