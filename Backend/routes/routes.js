@@ -37,7 +37,16 @@ router.post('/login', (req, res) => {
         })
     }
 
-    res.send(user);
+    const token = jwt.sign({_id: user.id}, 'secret')
+
+    req.cookie('jwt', token, {
+        httpOnly: true, 
+        maxAge: 24 * 60 * 60 * 1000 //1 day
+    })
+
+    res.send({
+        message: 'Success'
+    });
 })
 
 module.exports = router;
