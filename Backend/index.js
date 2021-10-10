@@ -14,7 +14,8 @@ const routes = require('./routes/routes')
 const app = express();
 
 app.use(cors({
-    credentials: true
+    credentials: true,
+    origin: ['http://localhost:3000','http://localhost:8080', 'http://localhost:4200']
 }));
 
 app.use(express.json());
