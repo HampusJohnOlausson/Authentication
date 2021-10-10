@@ -9,10 +9,12 @@ router.post('/register', async (req, res) => {
     const user = new User ({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: hashedPassword,
     })
 
-    res.send(await user.save());
+    const result = await user.save()
+    const { password, ...data } = await result.toJSON();
+    res.send(data);
 })
 
 module.exports = router;
