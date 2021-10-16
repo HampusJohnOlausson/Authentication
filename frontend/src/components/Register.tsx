@@ -3,7 +3,13 @@ import React from 'react'
 const Register = () => {
     return (
         <div>
-            Register
+            <h3>Register</h3>
+            <form>
+                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Register</button>
+            </form>
         </div>
     )
 }
