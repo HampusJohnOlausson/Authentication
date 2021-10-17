@@ -28,11 +28,11 @@ function App() {
     <BrowserRouter>
     
     <div className="App">
-      <Nav/>
+      <Nav name={name} setName={setName}/>
       <Switch>
         <Route exact path="/"  component={() => <Home name={name}/>} />
         <Route exact path="/Register" component={Register}/>
-        <Route exact path="/Login" component={Login}/>
+        <Route exact path="/Login" component={() => <Login setName={setName}/>}/>
       </Switch>
     </div>
     </BrowserRouter>
