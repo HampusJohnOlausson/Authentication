@@ -6,12 +6,12 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [redirect, setRedirect] = useState(false);
-
     
     const submit = async (e: SyntheticEvent) => {
         await fetch('http://localhost:8000/api/login', {
             method: "POST",
             headers: {'Content-Type': 'Application/json'},
+            credentials: 'include',
             body: JSON.stringify({
                 email,
                 password
