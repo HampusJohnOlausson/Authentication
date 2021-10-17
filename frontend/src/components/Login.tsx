@@ -6,14 +6,14 @@ const Login = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('')
 
-   async function getUserData(){
-       let response = await fetch({
-           method: "GET",
-           url: 'http://localhost:5000/Login',
-       });
+//    async function getUserData(){
+//        let response = await fetch({
+//            method: "GET",
+//            url: 'http://localhost:5000/Login',
+//        });
        
-       return response.json
-   }
+//        return response.json
+//    }
     
 
     return (
